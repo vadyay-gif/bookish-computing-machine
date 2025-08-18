@@ -22,8 +22,8 @@ html,body{margin:0;background:
 /* Header / Nav */
 .container{max-width:1100px;margin:0 auto;padding:24px}
 .nav{display:flex;align-items:center;justify-content:space-between}
-.logo-img{height:100px; /* <- bigger logo */ }
-.logo-img-mini{height:48px}
+.logo-img{height:200px; /* <- bigger logo */ }
+.logo-img-mini{height:100px}
 .navlinks{display:flex;gap:18px;align-items:center}
 .navlinks a{color:#c8d5e8;text-decoration:none;padding:8px 0}
 .button{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:transparent;color:#cde1ff}
