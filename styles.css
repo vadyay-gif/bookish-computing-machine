@@ -24,18 +24,6 @@ html,body{margin:0;background:
 .nav{display:flex;align-items:center;justify-content:space-between}
 .logo-img{height:400px; /* <- bigger logo */ }
 .logo-img-mini{height:100px}
-.logo {
-  display: flex;
-  align-items: center;
-  background: transparent; /* removes any dark background box */
-}
-/* Logo image */
-.logo-img {
-  height: 64px;   /* adjust size (try 72px or 80px if you want bigger) */
-  width: auto;    /* keeps aspect ratio, prevents cropping */
-  object-fit: contain;
-  display: inline-block;
-}
 .navlinks{display:flex;gap:18px;align-items:center}
 .navlinks a{color:#c8d5e8;text-decoration:none;padding:8px 0}
 .button{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:transparent;color:#cde1ff}
