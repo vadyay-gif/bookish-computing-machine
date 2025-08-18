@@ -4,14 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Orion AI — Harnessing the power of AI for everyday users</title>
+  <meta name="description" content="Orion AI builds approachable AI tools that help with study, work, and daily life—fast, safe, and simple." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- NAV -->
   <header class="container nav">
-    <div class="logo">
-      <img src="assets/orionai-logo.webp" alt="Orion AI logo" class="logo-img"/>
-    </div>
-    <nav>
+    <a href="#home" class="logo">
+      <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img">
+    </a>
+    <nav class="navlinks">
       <a href="#features">Features</a>
       <a href="#products">Products</a>
       <a href="#why">Why Orion</a>
@@ -21,7 +26,8 @@
     </nav>
   </header>
 
-  <main>
+  <main id="home">
+    <!-- HERO -->
     <section class="hero container">
       <div class="hero-card">
         <h1>Harnessing the power of AI<br>for everyday users</h1>
@@ -32,12 +38,150 @@
         </div>
       </div>
     </section>
-    <!-- Other sections same as before -->
-    <section id="features" class="section container"><h2>What makes Orion AI different</h2></section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section container">
+      <h2>What makes Orion AI different</h2>
+      <p class="sub">Thoughtful design, measurable outcomes, and a clear path from idea to launch.</p>
+      <div class="grid four">
+        <div class="card"><h3>AI, made practical</h3><p>Real solutions for study, work, and well-being.</p></div>
+        <div class="card"><h3>Fast to value</h3><p>From sign-up to impact in minutes.</p></div>
+        <div class="card"><h3>Private & secure</h3><p>Data-minimal by default with enterprise-grade options.</p></div>
+        <div class="card"><h3>Measurable outcomes</h3><p>Built-in analytics and feedback loops.</p></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section container">
+      <h2>Two apps. One mission.</h2>
+      <p class="sub">Practical AI you can use today—built with no-code friendly pipelines and clear guardrails.</p>
+      <div class="grid two">
+        <div class="card">
+          <div class="card-header">
+            <h3>CalmiQ</h3><span class="tag">AI psychology companion</span>
+          </div>
+          <ul class="list">
+            <li>Guided CBT-style micro-exercises</li>
+            <li>Daily mood & habit tracking</li>
+            <li>Emergency resource hand-offs</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button" href="#contact">Learn more</a>
+            <a class="button primary" href="#contact">Try demo</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>StudyGenie</h3><span class="tag">AI study helper</span>
+          </div>
+          <ul class="list">
+            <li>Step-by-step problem solving</li>
+            <li>Practice quizzes & spaced learning</li>
+            <li>Video explainers & smart notes</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button" href="#contact">Learn more</a>
+            <a class="button primary" href="#contact">Try demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ORION -->
+    <section id="why" class="section container">
+      <div class="grid two">
+        <div>
+          <h2>Built for speed, without cutting corners</h2>
+          <p class="sub">Your playbook to go from idea to prototype in days, not months—then scale with confidence.</p>
+          <ul class="ticks">
+            <li>Launch in under 10 days with our <strong>3-App AI pipeline</strong></li>
+            <li>Simple, engaging UX with <strong>real measurable impact</strong></li>
+            <li>Transparent <strong>privacy standards and risk controls</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Get a personalized walkthrough</h3>
+          <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We will get in touch.');">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea rows="4" placeholder="Tell us what you want to build…"></textarea>
+            <button class="button primary" type="submit">Request demo</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section container">
+      <h2>Simple, transparent pricing</h2>
+      <p class="sub">Start free. Upgrade when you’re ready to scale.</p>
+      <div class="grid three">
+        <div class="card">
+          <h3>Starter</h3>
+          <div class="price">$0<span>/mo</span></div>
+          <p class="muted">Explore Orion</p>
+          <ul class="list"><li>Live demos</li><li>Basic templates</li><li>Community</li></ul>
+          <a class="button primary" href="#contact">Get started</a>
+        </div>
+        <div class="card highlight">
+          <h3>Pro</h3>
+          <div class="price">$19<span>/mo</span></div>
+          <p class="muted">Build & learn</p>
+          <ul class="list"><li>Full features</li><li>Priority support</li><li>Analytics</li></ul>
+          <a class="button primary" href="#contact">Start Pro</a>
+        </div>
+        <div class="card">
+          <h3>Teams</h3>
+          <div class="price">Custom</div>
+          <p class="muted">Scale up</p>
+          <ul class="list"><li>Seat bundles</li><li>SSO (SAML)</li><li>Admin controls</li></ul>
+          <a class="button primary" href="#contact">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section container">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details><summary>Is Orion AI no-code friendly?</summary><p>Yes. Start with no-/low-code tools and add custom code when you’re ready.</p></details>
+        <details><summary>How do you handle privacy?</summary><p>We follow privacy-first design, minimize data retention, and offer enterprise SSO and deployment options.</p></details>
+        <details><summary>Where are you based?</summary><p>Orion AI is UAE-based and supports customers globally.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <div class="grid two">
+        <div>
+          <h2>Get in touch</h2>
+          <p class="sub">Questions, partnerships, or press—drop us a line.</p>
+          <p class="contact-line">📧 <a href="mailto:hello@orionai.ae">hello@orionai.ae</a></p>
+          <p class="contact-line">📞 +971 ••• •• ••••</p>
+        </div>
+        <div class="card">
+          <h3>Send a message</h3>
+          <form class="form" onsubmit="event.preventDefault(); alert('Message sent!');">
+            <div class="grid two">
+              <input type="text" placeholder="First name" required>
+              <input type="text" placeholder="Last name" required>
+            </div>
+            <input type="email" placeholder="Work email" required>
+            <textarea rows="4" placeholder="How can we help?"></textarea>
+            <button class="button primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="container footer">
-    <div class="logo mini"><img src="assets/orionai-logo.webp" alt="Orion AI logo small" class="logo-img-mini"/> <span>© 2025 Orion AI</span></div>
+    <div class="footer-left">
+      <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img-mini">
+      <span>© 2025 Orion AI</span>
+    </div>
+    <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
   </footer>
 </body>
 </html>
