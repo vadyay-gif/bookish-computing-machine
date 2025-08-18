@@ -29,13 +29,6 @@ html,body{margin:0;background:
   align-items: center;
   background: transparent; /* removes any dark background box */
 }
-/* Logo container */
-.logo {
-  display: flex;
-  align-items: center;
-  background: transparent; /* ensures no dark box behind the logo */
-  gap: 8px; /* optional: small spacing if you add text next to logo */
-}
 /* Logo image */
 .logo-img {
   height: 64px;   /* adjust size (try 72px or 80px if you want bigger) */
