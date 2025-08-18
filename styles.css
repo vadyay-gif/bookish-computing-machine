@@ -1,7 +1,91 @@
-.logo-img{height:40px}.logo-img-mini{height:24px}
-body{background:#0b1220;color:#fff;font-family:sans-serif;margin:0}
-.container{max-width:1100px;margin:0 auto;padding:20px}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.hero-card{padding:40px;background:#111;border-radius:12px}
-.button{padding:8px 14px;border-radius:8px;border:1px solid #333;color:#fff;text-decoration:none}
-.button.primary{background:linear-gradient(90deg,#22d3ee,#2563eb);color:#000}
+/* Orion AI — site styles */
+:root{
+  --bg:#0b1220;
+  --bg2:#0a0f1a;
+  --panel:#101826;
+  --text:#e6eef8;
+  --muted:#9fb2c8;
+  --cyan:#22d3ee;
+  --blue:#2563eb;
+  --border: rgba(255,255,255,0.10);
+  --card: rgba(255,255,255,0.04);
+  --ring: rgba(34,211,238,0.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;background:
+  radial-gradient(1200px 600px at 10% -10%,rgba(34,211,238,.12),transparent),
+  radial-gradient(1000px 600px at 90% -20%,rgba(37,99,235,.15),transparent),
+  var(--bg);
+  color:var(--text);font-family:Inter,system-ui,Arial,Helvetica,sans-serif;line-height:1.5}
+
+/* Header / Nav */
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.nav{display:flex;align-items:center;justify-content:space-between}
+.logo-img{height:56px; /* <- bigger logo */ }
+.logo-img-mini{height:24px}
+.navlinks{display:flex;gap:18px;align-items:center}
+.navlinks a{color:#c8d5e8;text-decoration:none;padding:8px 0}
+.button{display:inline-block;padding:10px 16px;border-radius:12px;border:1px solid var(--border);background:transparent;color:#cde1ff}
+.button.small{padding:8px 12px}
+.button.primary{background:linear-gradient(90deg,var(--cyan),var(--blue));color:#0b1120;font-weight:700;border:none}
+
+/* Hero */
+.hero{padding-top:16px;padding-bottom:8px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.03));
+  border:1px solid var(--border);border-radius:24px;padding:36px}
+.hero h1{font-size:44px;line-height:1.1;margin:0 0 12px}
+.hero p{color:var(--muted);max-width:800px}
+.cta{display:flex;gap:14px;margin-top:16px}
+
+/* Sections */
+.section{padding:56px 24px}
+.section h2{font-size:30px;margin:0 0 8px}
+.sub{color:var(--muted);margin:6px 0 18px}
+
+/* Grids */
+.grid{display:grid;gap:16px}
+.grid.two{grid-template-columns:1fr}
+.grid.three{grid-template-columns:1fr}
+.grid.four{grid-template-columns:1fr}
+@media(min-width:780px){
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .grid.four{grid-template-columns:repeat(4,1fr)}
+}
+
+/* Cards & lists */
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.tag{font-size:12px;color:#8feaff}
+.list{padding-left:18px;margin:10px 0 14px}
+.list li{margin:6px 0}
+.card-actions{display:flex;gap:10px}
+
+/* Bulleted ticks */
+.ticks{list-style:none;padding:0;margin:18px 0}
+.ticks li{margin:8px 0;padding-left:26px;position:relative}
+.ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--cyan);font-weight:800}
+
+/* Forms */
+.form{display:grid;gap:10px}
+.form input,.form textarea{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;color:var(--text)}
+
+/* Pricing */
+.price{font-size:28px;font-weight:800;margin-top:6px}
+.price span{font-size:12px;color:var(--muted);font-weight:600;margin-left:4px}
+.muted{color:var(--muted);margin-top:2px}
+.highlight{outline:3px solid var(--ring)}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin:8px 0}
+.faq summary{cursor:pointer;font-weight:600}
+
+/* Contact */
+.contact-line{margin:6px 0}
+
+/* Footer */
+.footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);margin-top:24px;padding-top:16px}
+.footer-left{display:flex;align-items:center;gap:10px}
+.links{display:flex;gap:16px}
+
