@@ -103,3 +103,43 @@ html,body{margin:0;background:
   border-radius:12px;
   font-weight:700;
 }
+#b2b-saas .btn {
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:12px;
+  font-weight:700;
+  background:linear-gradient(90deg, #58c6ff, #7b5cff);
+  color:#061020; /* dark text for contrast */
+  text-decoration:none;
+  transition:opacity .2s ease;
+}
+#b2b-saas .btn:hover {
+  opacity:.9;
+}
+#b2b-saas h2, 
+#b2b-saas h3 {
+  position:relative;
+  display:inline-block;
+}
+
+#b2b-saas h2::after,
+#b2b-saas h3::after {
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:40%;
+  height:3px;
+  background:linear-gradient(90deg, #58c6ff, #7b5cff);
+  border-radius:2px;
+}
+#b2b-saas .card {
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.1);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+
+#b2b-saas .card:hover {
+  border-color:rgba(88,198,255,.6);
+  box-shadow:0 0 18px rgba(88,198,255,.2);
+}
