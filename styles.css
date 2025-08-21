@@ -97,3 +97,9 @@ html,body{margin:0;background:
   display:inline-block; padding:8px 12px; border-radius:999px;
   border:1px solid rgba(255,255,255,.25);
 }
+#b2b-saas .btn {
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  font-weight:700;
+}
