@@ -89,3 +89,11 @@ html,body{margin:0;background:
 .footer-left{display:flex;align-items:center;gap:10px}
 .links{display:flex;gap:16px}
 
+/* Orion AI • B2B section helpers */
+#b2b-saas .b2b-cta { display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
+#b2b-saas .btn.ghost { background:transparent; border:1px solid rgba(255,255,255,.25); }
+#b2b-saas .b2b-pricing { margin-top:22px; }
+#b2b-saas .b2b-badge {
+  display:inline-block; padding:8px 12px; border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+}
