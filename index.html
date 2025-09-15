@@ -14,18 +14,39 @@
 <body>
   <!-- NAV -->
   <header class="container nav">
-    <a href="#home" class="logo">
-      <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img">
-    </a>
-    <nav class="navlinks">
-      <a href="#features">Features</a>
-      <a href="#products">Products</a>
-      <a href="#why">Why Orion</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="button small">Contact</a>
-    </nav>
-  </header>
+  <a href="#home" class="logo">
+    <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img" />
+  </a>
+
+  <!-- mobile toggle -->
+  <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">
+    ☰ Menu
+  </button>
+
+  <nav id="site-menu" class="navlinks">
+    <a href="#features">Features</a>
+    <a href="#products">Products</a>
+    <a href="#why">Why Orion</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="button small">Contact</a>
+  </nav>
+</header>
+
+<!-- place this small script just before </body>, or right after the header -->
+<script>
+  (function () {
+    const btn = document.querySelector(".menu-toggle");
+    const menu = document.getElementById("site-menu");
+    if (!btn || !menu) return;
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      menu.classList.toggle("open", !open);
+    });
+  })();
+</script>
+
 
   <main id="home">
     <!-- HERO -->
