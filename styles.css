@@ -143,3 +143,46 @@ html,body{margin:0;background:
   border-color:rgba(88,198,255,.6);
   box-shadow:0 0 18px rgba(88,198,255,.2);
 }
+/* --- Mobile layout WITHOUT hamburger --- */
+@media (max-width: 820px) {
+  /* tighter page padding */
+  .container { padding: 16px; }
+
+  /* header becomes two rows: logo on first, links wrap on next */
+  .nav {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;         /* key: allow wrapping */
+  }
+
+  .logo { flex: 0 0 auto; }  /* logo keeps natural size */
+  .logo-img { height: 44px; width: auto; object-fit: contain; }
+
+  /* nav links flow onto the next line and wrap nicely */
+  .navlinks {
+    display: flex;
+    flex-wrap: wrap;         /* key: make links wrap */
+    gap: 10px 14px;          /* row/column gaps */
+    margin-top: 4px;
+    flex: 1 1 100%;          /* take the full row under the logo */
+  }
+
+  .navlinks a {
+    padding: 8px 0;
+    text-decoration: none;
+    color: #c8d5e8;
+  }
+
+  /* keep the Contact chip compact on mobile */
+  .navlinks a.button.small {
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: #cde1ff;
+  }
+
+  /* reduce extra space before hero so header doesn't feel tall */
+  .hero { padding-top: 8px; }
+}
+
