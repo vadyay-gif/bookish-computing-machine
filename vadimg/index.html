@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vadim Gozman — Orion AI</title>
+  <meta name="description" content="Virtual business card for Vadim Gozman, Founder/CEO of Orion AI." />
+  <!-- Reuse site styles -->
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* Scoped tweaks for the business card */
+    .vcard-wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .vcard {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card, rgba(255,255,255,0.04));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    .vcard-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .vcard-logo {
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+    }
+    .vcard-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .vcard-sub {
+      margin: 0;
+      color: var(--muted, #9fb2c8);
+      font-size: 13px;
+    }
+    .vcard-name {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 12px 0 2px;
+      letter-spacing: .2px;
+    }
+    .vcard-role {
+      color: var(--muted, #9fb2c8);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+    .vcard-list {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 16px;
+    }
+    .vcard-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 12px;
+      background: var(--bg2, #0a0f1a);
+      color: var(--text, #e6eef8);
+      text-decoration: none;
+      word-break: break-word;
+    }
+    .vcard-item:hover {
+      outline: 2px solid var(--ring, rgba(34,211,238,0.35));
+    }
+    .vcard-actions {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
+    .btn {
+      display: inline-block;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      color: #cde1ff;
+      text-decoration: none;
+      background: transparent;
+    }
+    .btn.primary {
+      background: linear-gradient(90deg, var(--cyan, #22d3ee), var(--blue, #2563eb));
+      color: #0b1120;
+      font-weight: 700;
+      border: none;
+    }
+    .vcard-note {
+      margin-top: 10px;
+      color: var(--muted, #9fb2c8);
+      font-size: 12px;
+      text-align: center;
+    }
+    /* Mobile-first: already optimized; small tighten for very narrow screens */
+    @media (max-width: 380px) {
+      .vcard { padding: 16px; }
+      .vcard-name { font-size: 22px; }
+    }
+    .vcard-photo {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px;
+}
+
+.photo-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border, rgba(255,255,255,0.15));
+  box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+}
+
+  </style>
+</head>
+<body>
+  <main class="vcard-wrap">
+    <section class="vcard" aria-label="Digital Business Card">
+      <!-- Header / Branding -->
+      <div class="vcard-header">
+        <img src="/assets/orionai-logo.webp" alt="Orion AI" class="vcard-logo" />
+        <div>
+          <p class="vcard-title">Orion AI</p>
+          <p class="vcard-sub">UAЕ-based • Global</p>
+        </div>
+      </div>
+
+     <!-- Profile photo -->
+<div class="vcard-photo">
+  <img src="/assets/vadim-gozman.png" alt="Vadim Gozman" class="photo-img" />
+</div>
+
+      <!-- Identity -->
+      <h1 class="vcard-name">Vadim Gozman</h1>
+      <p class="vcard-role">Founder / CEO — Orion AI</p>
+
+      <!-- Contacts -->
+      <div class="vcard-list">
+        <a class="vcard-item" href="mailto:vadim.g@orionai.ae">
+          📧 <span>vadim.g@orionai.ae</span>
+        </a>
+        <a class="vcard-item" href="https://t.me/vadyay1984" target="_blank" rel="noopener">
+          💬 <span>Telegram: @vadyay1984</span>
+        </a>
+        <a class="vcard-item" href="https://www.linkedin.com/in/vadim-gozman" target="_blank" rel="noopener">
+          🔗 <span>linkedin.com/in/vadim-gozman</span>
+        </a>
+      </div>
+
+      <!-- Quick actions -->
+      <div class="vcard-actions">
+        <a class="btn primary" href="mailto:vadim.g@orionai.ae">Email</a>
+        <a class="btn" href="https://t.me/vadyay1984" target="_blank" rel="noopener">Telegram</a>
+      </div>
+
+      <p class="vcard-note">Tip: add this page to your phone’s Home Screen for 1-tap sharing.</p>
+    </section>
+  </main>
+</body>
+</html>
