@@ -1,205 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Orion AI – Practical AI for Everyday Users</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Orion AI — Harnessing the power of AI for everyday users</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="description" content="Orion AI builds approachable AI tools that help with study, work, and daily life—fast, safe, and simple." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta
+    name="description"
+    content="Orion AI builds practical AI tools for study, work, and everyday life – from AI Ready to custom B2B SaaS solutions."
+  />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orion: {
+              bg: '#050816',
+              card: '#0b1020',
+              accent: '#8b5cf6',
+              accentSoft: '#4c1d95',
+              accentBlue: '#38bdf8'
+            }
+          },
+          boxShadow: {
+            'orion-glow': '0 0 40px rgba(139, 92, 246, 0.5)',
+            'orion-soft': '0 0 30px rgba(56, 189, 248, 0.35)'
+          },
+          animation: {
+            'float-slow': 'float 12s ease-in-out infinite',
+            'pulse-soft': 'pulse-soft 6s ease-in-out infinite'
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px) translateX(0px)' },
+              '50%': { transform: 'translateY(-20px) translateX(10px)' }
+            },
+            'pulse-soft': {
+              '0%,100%': { opacity: 0.35 },
+              '50%': { opacity: 0.8 }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .orion-gradient-bg {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 50%),
+                  radial-gradient(circle at top right, rgba(139, 92, 246, 0.2), transparent 55%),
+                  radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #020617 70%);
+    }
+
+    .orion-card {
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.08), transparent 55%),
+                  linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(18px);
+    }
+
+    .orion-outline {
+      box-shadow:
+        0 0 0 1px rgba(148, 163, 184, 0.4),
+        0 0 22px rgba(56, 189, 248, 0.6),
+        0 0 42px rgba(139, 92, 246, 0.6);
+    }
+
+    .orion-gradient-text {
+      background: linear-gradient(120deg, #38bdf8, #8b5cf6, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .orion-pill {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.3), transparent),
+                  rgba(15, 23, 42, 0.96);
+    }
+  </style>
 </head>
-<body>
-  <!-- NAV -->
- <header class="container nav">
-  <a href="#home" class="logo">
-    <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img" />
-  </a>
-  <nav class="navlinks">
-    <a href="#features">Features</a>
-    <a href="#products">Products</a>
-    <a href="#why">Why Orion</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact" class="button small">Contact</a>
-  </nav>
-</header>
 
+<body class="bg-slate-950 text-slate-100 antialiased">
 
-<!-- place this small script just before </body>, or right after the header -->
-<script>
-  (function () {
-    const btn = document.querySelector(".menu-toggle");
-    const menu = document.getElementById("site-menu");
-    if (!btn || !menu) return;
-    btn.addEventListener("click", () => {
-      const open = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!open));
-      menu.classList.toggle("open", !open);
-    });
-  })();
-</script>
-
-
-  <main id="home">
-    <!-- HERO -->
-    <section class="hero container">
-      <div class="hero-card">
-        <h1>Harnessing the power of AI<br>for everyday users</h1>
-        <p>Orion AI builds approachable AI tools that help with study, work, and daily life—fast, safe, and simple.</p>
-        <div class="cta">
-          <a class="button primary" href="#contact">Get in touch</a>
-          <a class="button" href="#why">Learn more</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="section container">
-      <h2>What makes Orion AI different</h2>
-      <p class="sub">Thoughtful design, measurable outcomes, and a clear path from idea to launch.</p>
-      <div class="grid four">
-        <div class="card"><h3>AI, made practical</h3><p>Real solutions for study, work, and well-being.</p></div>
-        <div class="card"><h3>Fast to value</h3><p>From sign-up to impact in minutes.</p></div>
-        <div class="card"><h3>Private & secure</h3><p>Data-minimal by default with enterprise-grade options.</p></div>
-        <div class="card"><h3>Measurable outcomes</h3><p>Built-in analytics and feedback loops.</p></div>
-      </div>
-    </section>
-
- <!-- ===== Orion AI • B2B SaaS (BEGIN) ===== -->
-<section id="b2b-saas" class="section container">
-  <h2>B2B SaaS: Custom AI to power your business — fast</h2>
-  <p class="sub">
-    We harness the latest AI tools and no-code platforms to deliver tailored apps for your real workflows.
-    Start with a lightweight tool and scale to a full white-label platform — built quickly, affordably, and with your brand in mind.
-  </p>
-
-  <!-- Removed the two links -->
-
-  <h3 id="b2b-offer" style="margin-top:24px">What we offer</h3>
-  <div class="grid four">
-    <div class="card"><h3>Custom AI apps</h3><p>Purpose-built tools aligned to your workflows and KPIs.</p></div>
-    <div class="card"><h3>Rapid prototyping</h3><p>From idea to working MVP in as little as 10 days.</p></div>
-    <div class="card"><h3>Scalable platforms</h3><p>Start small, expand to multi-feature SaaS as you grow.</p></div>
-    <div class="card"><h3>White-label</h3><p>Launch under your brand with custom domains and theming.</p></div>
-    <div class="card"><h3>Affordable</h3><p>AI + no-code stacks keep costs low and agility high.</p></div>
-    <div class="card"><h3>Managed hosting</h3><p>We handle infra, updates, and monitoring.</p></div>
+  <!-- Background decorations -->
+  <div class="fixed inset-0 -z-10 orion-gradient-bg"></div>
+  <div class="pointer-events-none fixed inset-0 -z-10 opacity-60">
+    <div class="absolute -left-32 top-24 h-72 w-72 rounded-full bg-cyan-500 blur-3xl mix-blend-screen animate-pulse-soft"></div>
+    <div class="absolute -right-40 top-40 h-80 w-80 rounded-full bg-purple-700 blur-3xl mix-blend-screen animate-pulse-soft"></div>
+    <div class="absolute left-1/2 -bottom-40 h-96 w-96 -translate-x-1/2 rounded-full bg-indigo-700 blur-3xl mix-blend-screen"></div>
   </div>
 
-  <h3 style="margin-top:28px">Use cases</h3>
-  <div class="grid four">
-    <div class="card"><h3>Customer Support AI</h3><p>24/7 FAQ, ticket triage, complaint resolution, lead qualification.</p></div>
-    <div class="card"><h3>Internal Tools</h3><p>Research assistants, workflow automation, meeting notes & summaries.</p></div>
-    <div class="card"><h3>Education & Training</h3><p>AI tutors for onboarding, skills uplift, and compliance.</p></div>
-    <div class="card"><h3>Niche Assistants</h3><p>Healthcare intake, legal research, real-estate lead scorers.</p></div>
-    <div class="card"><h3>Marketing & Engagement</h3><p>AI-driven funnels, companions, personalization engines.</p></div>
-  </div>
+  <!-- Page wrapper -->
+  <div class="relative min-h-screen">
 
-  <!-- Pricing now a button -->
-  <div class="b2b-pricing">
-    <a href="#contact" class="btn">Custom AI apps from as little as $999</a>
-    <p class="sub">Pay once for a custom tool, or scale into a full SaaS platform. Pricing depends on complexity, integrations, and hosting.</p>
-  </div>
-</section>
-<!-- ===== Orion AI • B2B SaaS (END) ===== -->
+    <!-- NAVBAR -->
+    <header class="border-b border-white/5 bg-slate-950/60 backdrop-blur-xl sticky top-0 z-40">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
+        <a href="#" class="flex items-center">
+          <!-- Replace src with your actual logo path -->
+          <img src="orion-ai-logo.png" alt="Orion AI" class="h-9 w-auto" />
+        </a>
 
+        <!-- Desktop nav -->
+        <nav class="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex">
+          <a href="#solutions" class="hover:text-cyan-300 transition-colors">Solutions</a>
+          <a href="#ai-ready" class="hover:text-cyan-300 transition-colors">AI Ready</a>
+          <a href="#business" class="hover:text-cyan-300 transition-colors">For Business</a>
+          <a href="#why-orion" class="hover:text-cyan-300 transition-colors">Why Orion</a>
+          <a href="#faq" class="hover:text-cyan-300 transition-colors">FAQ</a>
+          <a href="#contact"
+             class="rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-purple-500 px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-950 shadow-orion-soft">
+            Get in touch
+          </a>
+        </nav>
 
-    <!-- PRODUCTS -->
-  <section id="products" class="section container">
-  <h2>AI Ready</h2>
-  <p class="sub">
-    AI Ready is Orion AI’s first product — a practical platform that helps people and organizations 
-    adopt and integrate AI tools confidently and effectively.
-  </p>
-
-  <div class="card">
-    <div class="card-header">
-      <h3>AI Ready</h3>
-      <span class="tag">Your gateway to AI adoption</span>
-    </div>
-    <ul class="list">
-      <li>Step-by-step onboarding into AI workflows</li>
-      <li>No-code friendly: easy for anyone to start</li>
-      <li>Privacy-first with clear guardrails</li>
-      <li>Designed for UAE, ready for global scale</li>
-    </ul>
-    <div class="card-actions">
-      <a class="button" href="#contact">Learn more</a>
-      <a class="button primary" href="#contact">Try demo</a>
-    </div>
-  </div>
-</section>
-
-   
-
-    <!-- WHY ORION -->
-    <section id="why" class="section container">
-      <div class="grid two">
-        <div>
-          <h2>Built for speed, without cutting corners</h2>
-          <p class="sub">Your playbook to go from idea to prototype in days, not months—then scale with confidence.</p>
-          <ul class="ticks">
-            <li>Launch in under 10 days with our <strong>3-App AI pipeline</strong></li>
-            <li>Simple, engaging UX with <strong>real measurable impact</strong></li>
-            <li>Transparent <strong>privacy standards and risk controls</strong></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Get a personalized walkthrough</h3>
-          <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We will get in touch.');">
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea rows="4" placeholder="Tell us what you want to build…"></textarea>
-            <button class="button primary" type="submit">Request demo</button>
-          </form>
-        </div>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button"
+                class="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-900/70 p-2 text-slate-200 shadow-sm md:hidden"
+                aria-label="Toggle navigation">
+          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
       </div>
-    </section>
 
-    <!-- FAQ -->
-    <section id="faq" class="section container">
-      <h2>FAQ</h2>
-      <div class="faq">
-        <details><summary>Is Orion AI no-code friendly?</summary><p>Yes. Start with no-/low-code tools and add custom code when you’re ready.</p></details>
-        <details><summary>How do you handle privacy?</summary><p>We follow privacy-first design, minimize data retention, and offer enterprise SSO and deployment options.</p></details>
-        <details><summary>Where are you based?</summary><p>Orion AI is UAE-based and supports customers globally.</p></details>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section container">
-      <div class="grid two">
-        <div>
-          <h2>Get in touch</h2>
-          <p class="sub">Questions, partnerships, or press—drop us a line.</p>
-          <p class="contact-line">📧 <a href="mailto:hello@orionai.ae">hello@orionai.ae</a></p>
-          <p class="contact-line">📞 +971 ••• •• ••••</p>
+      <!-- Mobile nav menu -->
+      <nav id="mobile-menu"
+           class="hidden border-t border-white/5 bg-slate-950/95 px-4 pb-4 pt-2 text-sm text-slate-100 md:hidden">
+        <div class="flex flex-col gap-2">
+          <a href="#solutions" class="rounded-lg px-3 py-2 hover:bg-white/5">Solutions</a>
+          <a href="#ai-ready" class="rounded-lg px-3 py-2 hover:bg-white/5">AI Ready</a>
+          <a href="#business" class="rounded-lg px-3 py-2 hover:bg-white/5">For Business</a>
+          <a href="#why-orion" class="rounded-lg px-3 py-2 hover:bg-white/5">Why Orion</a>
+          <a href="#faq" class="rounded-lg px-3 py-2 hover:bg-white/5">FAQ</a>
+          <a href="#contact"
+             class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-purple-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950">
+            Get in touch
+          </a>
         </div>
-        <div class="card">
-          <h3>Send a message</h3>
-          <form class="form" onsubmit="event.preventDefault(); alert('Message sent!');">
-            <div class="grid two">
-              <input type="text" placeholder="First name" required>
-              <input type="text" placeholder="Last name" required>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pt-16">
+
+      <!-- HERO -->
+      <section class="grid gap-10 md:grid-cols-[1.25fr,1.1fr] md:items-center lg:gap-16">
+        <!-- Hero text -->
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/70 px-3 py-1 text-xs text-cyan-200 shadow-orion-soft">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+            Harnessing the power of AI for everyday users
+          </div>
+
+          <div class="space-y-4">
+            <h1 class="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
+              AI tools that feel simple—
+              <span class="orion-gradient-text">backed by serious engineering.</span>
+            </h1>
+            <p class="max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
+              Orion AI builds approachable AI tools that help with study, work, and daily life.
+              From solo founders to growing teams, we turn your ideas into production-ready
+              AI products in days, not months.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="#contact"
+               class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-purple-500 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 shadow-orion-soft">
+              Get in touch
+            </a>
+            <a href="#ai-ready"
+               class="inline-flex items-center justify-center rounded-full border border-slate-500/60 bg-slate-900/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-200 hover:border-cyan-400/70 hover:text-cyan-200">
+              Explore AI Ready
+            </a>
+          </div>
+
+          <dl class="mt-4 grid max-w-md grid-cols-3 gap-3 text-[11px] text-slate-300 sm:text-xs">
+            <div>
+              <dt class="text-slate-400">Launch speed</dt>
+              <dd class="font-medium text-slate-50">From idea to MVP in 10 days</dd>
             </div>
-            <input type="email" placeholder="Work email" required>
-            <textarea rows="4" placeholder="How can we help?"></textarea>
-            <button class="button primary" type="submit">Send</button>
-          </form>
+            <div>
+              <dt class="text-slate-400">HQ</dt>
+              <dd class="font-medium text-slate-50">UAE-based, global reach</dd>
+            </div>
+            <div>
+              <dt class="text-slate-400">Focus</dt>
+              <dd class="font-medium text-slate-50">Practical AI, not hype</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Hero visual card -->
+        <div class="relative">
+          <div class="absolute -left-10 top-6 h-32 w-32 rounded-full bg-cyan-400/40 blur-3xl opacity-80 animate-float-slow"></div>
+          <div class="absolute -right-10 -bottom-4 h-40 w-40 rounded-full bg-purple-500/40 blur-3xl opacity-80 animate-float-slow"></div>
+
+          <div class="orion-card relative overflow-hidden rounded-3xl p-6 shadow-orion-glow">
+            <div class="mb-4 flex items-center justify-between gap-2 text-xs text-slate-300">
+              <span class="inline-flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                Realtime AI Workspace
+              </span>
+              <span class="rounded-full border border-white/10 px-2 py-0.5 text-[10px] uppercase tracking-wide">
+                Orion AI • v1
+              </span>
+            </div>
+
+            <h2 class="text-lg font-semibold text-slate-50">
+              Power your workflows with<br />
+              <span class="orion-gradient-text">practical intelligence.</span>
+            </h2>
+
+            <p class="mt-3 text-xs leading-relaxed text-slate-300">
+              Centralize your AI tools into one clean interface. Guide users with guardrails,
+              track adoption, and iterate fast—all without overwhelming your team.
+            </p>
+
+            <div class="mt-4 grid gap-3 text-[11px] text-slate-200 sm:grid-cols-2">
+              <div class="rounded-2xl border border-cyan-400/40 bg-slate-900/80 p-3">
+                <div class="mb-1 flex items-center justify-between">
+                  <span class="text-[10px] uppercase tracking-wide text-cyan-200">AI Ready</span>
+                  <span class="rounded-full bg-cyan-500/20 px-2 py-0.5 text-[10px] text-cyan-200">
+                    Flagship product
+                  </span>
+                </div>
+                <p class="text-[11px] text-slate-200">
+                  Step-by-step onboarding into AI workflows for teams and individuals.
+                </p>
+              </div>
+
+              <div class="rounded-2xl border border-purple-500/40 bg-slate-900/80 p-3">
+                <div class="mb-1 flex items-center justify-between">
+                  <span class="text-[10px] uppercase tracking-wide text-purple-200">Custom apps</span>
+                  <span class="rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] text-purple-100">
+                    B2B SaaS
+                  </span>
+                </div>
+                <p class="text-[11px] text-slate-200">
+                  From internal assistants to full white-label platforms under your brand.
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 flex items-center justify-between border-t border-white/5 pt-3 text-[10px] text-slate-400">
+              <span>Designed & built in the UAE</span>
+              <span class="flex items-center gap-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                Live • <span class="text-slate-200">getaiready.app</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT MAKES ORION DIFFERENT -->
+      <section id="solutions" class="mt-16 space-y-6">
+        <div class="max-w-2xl space-y-2">
+          <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            What makes Orion AI different
+          </h2>
+          <p class="text-sm text-slate-300">
+            Thoughtful design, measurable outcomes, and a clear path from idea to launch.
+          </p>
+        </div>
+
+        <div class="mt-4 grid gap-4 md:grid-cols-4">
+          <div class="orion-pill rounded-2xl border border-cyan-400/30 p-4 text-xs shadow-orion-soft">
+            <div class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-200">
+              Practical first
+            </div>
+            <p class="text-slate-100">
+              Real solutions for study, work, and well-being—no buzzwords, just workflows
+              that actually get used.
+            </p>
+          </div>
+
+          <div class="orion-pill rounded-2xl border border-white/10 p-4 text-xs">
+            <div class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Fast to value
+            </div>
+            <p class="text-slate-100">
+              Launch your first AI tool in as little as 10 days using modern AI + no-code stacks.
+            </p>
+          </div>
+
+          <div class="orion-pill rounded-2xl border border-emerald-400/30 p-4 text-xs">
+            <div class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
+              Private &amp; secure
+            </div>
+            <p class="text-slate-100">
+              Data-minimal by default with enterprise-grade privacy and deployment options.
+            </p>
+          </div>
+
+          <div class="orion-pill rounded-2xl border border-purple-400/30 p-4 text-xs">
+            <div class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-purple-200">
+              Measurable outcomes
+            </div>
+            <p class="text-slate-100">
+              Built-in analytics so you see adoption, usage, and ROI—not just “AI hype”.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOR BUSINESS / B2B -->
+      <section id="business" class="mt-20 space-y-6">
+        <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div class="space-y-2">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              For businesses
+            </p>
+            <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              B2B SaaS: custom AI to power your business — fast
+            </h2>
+            <p class="max-w-2xl text-sm text-slate-300">
+              We harness the latest AI tools and no-code platforms to deliver tailored apps
+              for your real workflows. Start with a lightweight internal tool and scale to a
+              full white-label platform—built quickly, affordably, and under your brand.
+            </p>
+          </div>
+          <a href="#contact"
+             class="inline-flex w-max items-center justify-center rounded-full border border-cyan-400/50 bg-slate-950/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-cyan-200 hover:border-cyan-300">
+            Talk to us about your use case
+          </a>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Custom AI apps
+            </h3>
+            <p class="text-slate-200">
+              Purpose-built tools aligned to your workflows and KPIs—assistants, copilots,
+              and niche AI utilities.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Rapid prototyping
+            </h3>
+            <p class="text-slate-200">
+              From idea to working MVP in as little as 10 days, so you can test and iterate
+              before scaling.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Scalable platforms
+            </h3>
+            <p class="text-slate-200">
+              Start small and grow into multi-feature SaaS with subscriptions, billing,
+              and analytics baked-in.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              White-label ready
+            </h3>
+            <p class="text-slate-200">
+              Launch under your own brand with custom domains, theming, and user management.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Affordable by design
+            </h3>
+            <p class="text-slate-200">
+              Modern AI + no-code keeps build costs low without sacrificing reliability
+              or UX quality.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Managed hosting
+            </h3>
+            <p class="text-slate-200">
+              We handle infrastructure, updates, monitoring, and performance so your team
+              can focus on growth.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-4 rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-xs text-slate-200">
+          <p class="font-medium">
+            Custom AI apps from as little as <span class="text-cyan-300">$999</span>.
+          </p>
+          <p class="mt-1 text-slate-300">
+            Pricing depends on complexity, integrations, and hosting. Start with a focused
+            internal tool, or jump straight to a full SaaS platform.
+          </p>
+        </div>
+      </section>
+
+      <!-- AI READY PRODUCT HIGHLIGHT -->
+      <section id="ai-ready" class="mt-20 grid gap-8 md:grid-cols-[1.1fr,1.1fr] md:items-center">
+        <div class="space-y-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300">
+            Flagship product
+          </p>
+          <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            AI Ready — your gateway to AI adoption
+          </h2>
+          <p class="text-sm text-slate-300">
+            AI Ready is Orion AI’s first product: a practical platform that helps people and
+            organizations adopt and integrate AI tools confidently and effectively.
+          </p>
+          <ul class="mt-2 space-y-2 text-sm text-slate-200">
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+              Step-by-step onboarding into AI workflows for teams and individuals.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+              No-code friendly: get started without writing a line of code.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+              Clear guardrails, policy controls, and transparent privacy options.
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+              Designed for the UAE, architected for global scale.
+            </li>
+          </ul>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://getaiready.app" target="_blank" rel="noreferrer"
+               class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-violet-500 to-cyan-400 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 shadow-orion-glow">
+              Visit getaiready.app
+            </a>
+            <a href="#contact"
+               class="inline-flex items-center justify-center rounded-full border border-purple-400/60 bg-slate-950/60 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-purple-100">
+              Request a demo
+            </a>
+          </div>
+        </div>
+
+        <!-- AI Ready card -->
+        <div class="relative">
+          <div class="absolute -left-10 top-4 h-32 w-32 rounded-full bg-purple-500/50 blur-3xl opacity-70"></div>
+          <div class="absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-cyan-400/40 blur-3xl opacity-70"></div>
+
+          <div class="orion-card relative overflow-hidden rounded-3xl p-5 shadow-orion-soft">
+            <div class="mb-3 flex items-center justify-between text-xs text-slate-300">
+              <span class="inline-flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                AI Ready • Adoption Dashboard
+              </span>
+              <span class="rounded-full bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wide">
+                Live product
+              </span>
+            </div>
+
+            <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-4">
+              <div class="mb-2 flex items-center justify-between text-[11px] text-slate-200">
+                <span class="font-medium">Organization overview</span>
+                <span class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] text-emerald-300">
+                  Adoption ↑ 68%
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-3 text-[10px] text-slate-300">
+                <div class="space-y-1">
+                  <p class="text-slate-400">Active users</p>
+                  <p class="text-base font-semibold text-slate-50">124</p>
+                  <p class="text-emerald-300">+23 this week</p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-slate-400">Workflows</p>
+                  <p class="text-base font-semibold text-slate-50">18</p>
+                  <p class="text-slate-300">Support • Ops • HR</p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-slate-400">Time saved</p>
+                  <p class="text-base font-semibold text-slate-50">212h</p>
+                  <p class="text-emerald-300">Last 30 days</p>
+                </div>
+              </div>
+
+              <div class="mt-3 h-16 rounded-xl bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-sky-500/20">
+                <!-- placeholder for graph feel -->
+              </div>
+
+              <p class="mt-3 text-[11px] text-slate-300">
+                Track which teams are using which workflows, measure impact, and iterate with
+                confidence—all from a single, simple interface.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY ORION / USE CASES -->
+      <section id="why-orion" class="mt-20 space-y-6">
+        <div class="max-w-2xl space-y-2">
+          <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            Where Orion AI delivers impact
+          </h2>
+          <p class="text-sm text-slate-300">
+            From students and solo founders to larger teams, Orion AI focuses on clear,
+            high-value use cases.
+          </p>
+        </div>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Customer support AI
+            </h3>
+            <p class="text-slate-200">
+              24/7 FAQ, ticket triage, complaint resolution, and lead qualification tailored
+              to your tone of voice.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Internal copilots
+            </h3>
+            <p class="text-slate-200">
+              Research assistants, workflow automation, and meeting knowledge bases that
+              actually get used.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Education &amp; training
+            </h3>
+            <p class="text-slate-200">
+              AI tutors for onboarding, skills uplift, and compliance, built on your own
+              content and processes.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Niche assistants
+            </h3>
+            <p class="text-slate-200">
+              Healthcare intake, legal research helpers, real-estate lead scorers, and more.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Marketing &amp; funnels
+            </h3>
+            <p class="text-slate-200">
+              AI-driven funnels, companions, and personalization engines that boost engagement.
+            </p>
+          </div>
+          <div class="orion-card rounded-2xl p-4 text-xs">
+            <h3 class="mb-1 text-[11px] font-semibold uppercase tracking-wide text-slate-200">
+              Experimentation sandbox
+            </h3>
+            <p class="text-slate-200">
+              Quickly test new AI experiences without touching your core systems or risking
+              production data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="mt-20 space-y-6">
+        <div class="max-w-2xl space-y-2">
+          <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+            FAQ
+          </h2>
+          <p class="text-sm text-slate-300">
+            A few common questions about how Orion AI works with individuals and teams.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <!-- FAQ item -->
+          <details class="group rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="font-medium text-slate-100">
+                Is Orion AI no-code friendly?
+              </span>
+              <span class="shrink-0 rounded-full border border-white/10 bg-slate-900/80 p-1 text-xs text-slate-300 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300">
+              Yes. We love working with no- and low-code stacks. Many of our first versions
+              ship without any custom backend code, and we introduce engineering only where
+              it creates clear additional value.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="font-medium text-slate-100">
+                How do you handle privacy and data security?
+              </span>
+              <span class="shrink-0 rounded-full border border-white/10 bg-slate-900/80 p-1 text-xs text-slate-300 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300">
+              We follow privacy-first design: data-minimal by default, transparent about what
+              is stored, and we use reputable AI providers. For businesses, we can support
+              enterprise SSO and region-specific deployment options.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="font-medium text-slate-100">
+                Where are you based?
+              </span>
+              <span class="shrink-0 rounded-full border border-white/10 bg-slate-900/80 p-1 text-xs text-slate-300 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300">
+              Orion AI is based in the UAE and works with customers globally. We’re excited
+              about the region’s focus on AI innovation and use it as our launchpad.
+            </p>
+          </details>
+
+          <details class="group rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+              <span class="font-medium text-slate-100">
+                Can you help with both internal tools and public SaaS?
+              </span>
+              <span class="shrink-0 rounded-full border border-white/10 bg-slate-900/80 p-1 text-xs text-slate-300 group-open:rotate-45 transition-transform">
+                +
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-300">
+              Yes. We build internal assistants and knowledge tools, as well as full
+              customer-facing products with authentication, billing, and analytics.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mt-20">
+        <div class="grid gap-8 md:grid-cols-[1.05fr,1.2fr] md:items-center">
+          <div class="space-y-3">
+            <h2 class="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Ready to build your first (or next) AI product?
+            </h2>
+            <p class="text-sm text-slate-300">
+              Whether you’re exploring an idea, planning a new product, or want to bring AI
+              into an existing workflow, we’d love to hear from you. Expect a concrete,
+              practical response—not a generic sales script.
+            </p>
+
+            <div class="mt-4 space-y-2 text-sm text-slate-200">
+              <p>
+                <span class="text-slate-400">Email:</span>
+                <a href="mailto:info@orionai.ae" class="text-cyan-300 hover:underline">
+                  info@orionai.ae
+                </a>
+              </p>
+              <p>
+                <span class="text-slate-400">Telegram:</span>
+                <a href="https://t.me/OrionAIAE" target="_blank" rel="noreferrer"
+                   class="text-cyan-300 hover:underline">
+                  @orionaiae
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact form card -->
+          <div class="orion-card rounded-3xl p-6 shadow-orion-soft">
+            <form class="space-y-4">
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="space-y-1 text-sm">
+                  <label class="text-slate-200">Name</label>
+                  <input type="text" placeholder="Your name"
+                         class="w-full rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+                </div>
+                <div class="space-y-1 text-sm">
+                  <label class="text-slate-200">Company / Project</label>
+                  <input type="text" placeholder="Optional"
+                         class="w-full rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+                </div>
+              </div>
+
+              <div class="space-y-1 text-sm">
+                <label class="text-slate-200">Email</label>
+                <input type="email" placeholder="you@example.com"
+                       class="w-full rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none" />
+              </div>
+
+              <div class="space-y-1 text-sm">
+                <label class="text-slate-200">What do you want to build?</label>
+                <textarea rows="4" placeholder="Tell us about your idea, workflow, or problem."
+                          class="w-full resize-none rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-cyan-400 focus:outline-none"></textarea>
+              </div>
+
+              <button type="submit"
+                      class="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-purple-500 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-slate-950 shadow-orion-glow">
+                Send message
+              </button>
+
+              <p class="text-[11px] text-slate-400">
+                By submitting, you agree that we may contact you about this request.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 bg-slate-950/80">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-400 md:flex-row md:items-center md:justify-between md:px-6">
+        <div class="flex items-center gap-3">
+          <!-- Footer logo -->
+          <img src="orion-ai-logo.png" alt="Orion AI" class="h-8 w-auto" />
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <p>© 2025 Orion AI. UAE-based, serving customers worldwide.</p>
+          <div class="flex gap-3">
+            <a href="#" class="hover:text-cyan-300">Privacy</a>
+            <a href="#" class="hover:text-cyan-300">Terms</a>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="container footer">
-    <div class="footer-left">
-      <img src="assets/orionai-logo.webp" alt="Orion AI" class="logo-img-mini">
-      <span>© 2025 Orion AI</span>
-    </div>
-    <div class="links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
-  </footer>
+  <!-- Mobile nav toggle script -->
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
