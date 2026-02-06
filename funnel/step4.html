@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pregunta (4/8)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="brand">
+      <div class="badge">Quiz • 4/8</div>
+      <a class="link" href="#" onclick="goBack('step3.html'); return false;">← Atrás</a>
+    </div>
+
+    <div class="card">
+      <h1>Sé honesto:</h1>
+      <p>Esto nos ayuda a recomendarte el mejor “camino”.</p>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progreso</span><span data-progress-label></span></div>
+        <div class="progress"><div data-progress-bar></div></div>
+      </div>
+
+      <p><strong>¿Crees que aún es posible ganar dinero online en 2026?</strong></p>
+
+      <div class="options">
+        <button class="option" data-option="A">A. Sí, pero no sé cómo</button>
+        <button class="option" data-option="B">B. Sí, con el sistema correcto</button>
+        <button class="option" data-option="C">C. No estoy seguro</button>
+        <button class="option" data-option="D">D. Tengo dudas</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/funnel.js"></script>
+  <script>
+    setProgress(4, 8);
+    wireOptions(4, "step5.html");
+  </script>
+</body>
+</html>
