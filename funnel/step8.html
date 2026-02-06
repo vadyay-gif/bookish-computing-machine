@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resultado (8/8)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="brand">
+      <div class="badge">Resultado • 8/8</div>
+      <a class="link" href="#" onclick="goBack('step7.html'); return false;">← Atrás</a>
+    </div>
+
+    <div class="card">
+      <h1>🎉 ¡Buenas noticias!</h1>
+      <p>
+        Según tus respuestas, calificas para ver este sistema que muchas personas están usando para generar ingresos online.
+      </p>
+      <p>
+        ✅ No requiere experiencia previa. <br/>
+        ✅ No necesitas conocimientos técnicos. <br/>
+        ✅ Puedes empezar hoy mismo.
+      </p>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progreso</span><span data-progress-label></span></div>
+        <div class="progress"><div data-progress-bar></div></div>
+      </div>
+
+      <p><strong>¿Quieres ver cómo funciona ahora?</strong></p>
+
+      <div class="options">
+        <button class="option" data-option="A">A. Sí, ver ahora</button>
+        <button class="option" data-option="B">B. Sí, acceso inmediato</button>
+        <button class="option" data-option="C">C. Muéstrame el sistema</button>
+      </div>
+
+      <div class="footer">
+        <span class="small">Al hacer clic, verás la presentación completa.</span>
+        <a class="link" href="#" onclick="resetAnswers(); alert('Respuestas borradas.'); return false;">Borrar respuestas</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/funnel.js"></script>
+  <script>
+    setProgress(8, 8);
+
+    // On step 8 option click: save + redirect to offer
+    const OFFER_URL = "https://onlinepuonline.com/k4aTiiO7/";
+    const buttons = document.querySelectorAll("[data-option]");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        setAnswer(8, btn.getAttribute("data-option"));
+        // Optional: append lightweight tracking (no PII)
+        const a = getAnswers();
+        const qp = new URLSearchParams({
+          s1: a.step1 || "",
+          s2: a.step2 || "",
+          s3: a.step3 || "",
+          s4: a.step4 || "",
+          s5: a.step5 || "",
+          s6: a.step6 || "",
+          s7: a.step7 || "",
+          s8: a.step8 || "",
+        });
+        window.location.href = OFFER_URL + (OFFER_URL.includes("?") ? "&" : "?") + qp.toString();
+      });
+    });
+  </script>
+</body>
+</html>
