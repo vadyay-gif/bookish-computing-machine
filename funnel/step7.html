@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Analizando (7/8)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="brand">
+      <div class="badge">Quiz • 7/8</div>
+      <a class="link" href="#" onclick="goBack('step6.html'); return false;">← Atrás</a>
+    </div>
+
+    <div class="card">
+      <h1>Analizando tus respuestas…</h1>
+      <p>Estamos calculando el mejor método para tu perfil. <br/>Solo el <strong>17%</strong> de personas califican para lo que vamos a mostrar…</p>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progreso</span><span data-progress-label></span></div>
+        <div class="progress"><div data-progress-bar></div></div>
+      </div>
+
+      <div class="loader"><div></div></div>
+
+      <p style="margin-top:16px;"><strong>Si calificas, ¿te gustaría ver un sistema paso a paso?</strong></p>
+
+      <div class="options">
+        <button class="option" data-option="A">A. Sí, definitivamente</button>
+        <button class="option" data-option="B">B. Sí, muéstramelo</button>
+        <button class="option" data-option="C">C. Tal vez</button>
+        <button class="option" data-option="D">D. Solo si es fácil</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/funnel.js"></script>
+  <script>
+    setProgress(7, 8);
+    wireOptions(7, "step8.html");
+  </script>
+</body>
+</html>
