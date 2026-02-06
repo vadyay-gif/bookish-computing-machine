@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pregunta (6/8)</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="brand">
+      <div class="badge">Quiz • 6/8</div>
+      <a class="link" href="#" onclick="goBack('step5.html'); return false;">← Atrás</a>
+    </div>
+
+    <div class="card">
+      <h1>Pregunta importante:</h1>
+      <p>Esto mide tu “ritmo ideal” para empezar.</p>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Progreso</span><span data-progress-label></span></div>
+        <div class="progress"><div data-progress-bar></div></div>
+      </div>
+
+      <p><strong>¿Cuánto tiempo podrías dedicarle si funciona?</strong></p>
+
+      <div class="options">
+        <button class="option" data-option="A">A. 1–2 horas al día</button>
+        <button class="option" data-option="B">B. 30–60 min diarios</button>
+        <button class="option" data-option="C">C. Solo fines de semana</button>
+        <button class="option" data-option="D">D. Depende de resultados</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/funnel.js"></script>
+  <script>
+    setProgress(6, 8);
+    wireOptions(6, "step7.html");
+  </script>
+</body>
+</html>
